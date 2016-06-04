@@ -3,27 +3,22 @@ var url = 'https://pepe-ayuda.herokuapp.com/api';
 
 module.exports = {
     'news.get': function(){
-        console.log('Llegamos a las actions!');
         return rp(`${url}/pepe_news`)
         .then(function(response){
 
-            console.log(typeof response);
             response = JSON.parse(response);
 
             var data = response[Math.floor(Math.random()*response.length)];
 
-            console.log('/////');
-            console.log(data);
-            console.log('/////');
+            data.shortContent = data['short-content'];
+
+            var text = `${data.title}: \n${data.shortContent} \n ${data.url}`;
 
             return {
-                speech: data.title,
-                displayText: data.title,
+                speech: text,
+                displayText: text,
                 source: 'api.news'
             };
-        })
-        .catch(function(error){
-            console.log(error);
         });
     }
 };

@@ -23,13 +23,12 @@ app.post('/', function(req, res){
             });
         }
         else{
-            res.status(200).json({
-                speech: '!!',
-                displayText: '!!',
-                source: '!!'
+            res.status(500).json({
+                speech: 'Hubo un error con nuestros servicios',
+                displayText: 'Hubo un error con nuestros servicios',
+                source: 'webhook'
             });
         }
-
 
     } catch (e) {
         console.log(e);
