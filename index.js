@@ -12,16 +12,30 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function(req, res){
-    console.log(req.body.action);
-
     try {
-        res.status(200).json({
-            speech: `${req.body.result.fulfillment.speech} !!`,
-            displayText: `${req.body.result.fulfillment.speech} !!`,
-            source: 'pepehook'
-        });
+        var action = req.body.resoult.action;
+
+        if(action && actions[action]){
+            actions[action]()
+            .then(function(response){
+                res.status(200).json(response);
+            });
+        }
+        else{
+            res.status(200).json({
+                speech: '!!',
+                displayText: '!!',
+                source: '!!'
+            });
+        }
+
+
     } catch (e) {
-        console.log(e);
+        res.status(500).json({
+            speech: 'Hubo un error con nuestros servicios',
+            displayText: 'Hubo un error con nuestros servicios',
+            source: 'webhook'
+        });
     }
 });
 
