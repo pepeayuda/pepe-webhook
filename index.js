@@ -1,14 +1,15 @@
 var express = require('express');
 var app = express();
 var port = process.env.PORT || 3000;
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
     res.send('Pepe boot its working');
 });
 
 app.post('/webhook', function(req, res){
-    console.log(req['body']);
-    console.log(req['params']);
+    console.log(req.body);
+    
     try {
         res.status(200).json({
             speech: req.body.fulfillment + 'desde el hook',
