@@ -15,6 +15,8 @@ app.post('/', function(req, res){
     try {
         var action = req.body.resoult.action;
 
+        console.log('action');
+
         if(action && actions[action]){
             actions[action]()
             .then(function(response){
@@ -31,6 +33,7 @@ app.post('/', function(req, res){
 
 
     } catch (e) {
+        console.log(e);
         res.status(500).json({
             speech: 'Hubo un error con nuestros servicios',
             displayText: 'Hubo un error con nuestros servicios',
