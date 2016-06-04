@@ -16,9 +16,8 @@ app.post('/', function(req, res){
         var action = req.body.result.action;
 
         if(action && actions[action]){
-            actions[action]()
+            actions[action](req.body)
             .then(function(data){
-                console.log(data);
                 res.status(200).json(data);
             });
         }

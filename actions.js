@@ -20,5 +20,8 @@ module.exports = {
                 source: 'api.news'
             };
         });
+    },
+    'service.init': function(data){
+        
     }
 };
