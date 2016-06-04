@@ -14,7 +14,7 @@ app.get('/', function (req, res) {
 app.post('/', function(req, res){
     console.log(req.body);
     try {
-        var action = req.body.resoult.action;
+        var action = req.body.result.action;
 
         console.log(req.body);
 
