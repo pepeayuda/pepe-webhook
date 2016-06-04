@@ -12,7 +12,7 @@ module.exports = {
 
             data.shortContent = data['short-content'];
 
-            var text = `${data.title}\n${data.shortContent}\n${data.url}`;
+            var text = `${data.shortContent}\n${data.url}`;
 
             return {
                 speech: text,
