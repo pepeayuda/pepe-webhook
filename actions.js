@@ -23,8 +23,15 @@ module.exports = {
     },
     'service.find': function(data){
 
+      return rp(`${url}/services?filter[include]=servicesType`)
+      .then(function (response) {
+
+        response = JSON.parse(response);
+
+
+      });
     },
     'service.create': function(data){
-
+      console.log(data);
     }
 };
