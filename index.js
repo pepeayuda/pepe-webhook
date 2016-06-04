@@ -15,7 +15,7 @@ app.post('/', function(req, res){
 
     try {
         res.status(200).json({
-            speech: req.body.result.fulfillment + 'desde el hook',
+            speech: req.body.result.fulfillment.speech + 'desde el hook',
             displayText: req.body.result.fulfillment.speech + 'desde el hook',
             source: 'pepehook'
         });
