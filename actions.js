@@ -9,8 +9,10 @@ module.exports = {
 
             var data = response[Math.floor(Math.random()*response.length)];
 
+            console.log('/////');
             console.log(data);
-            
+            console.log('/////');
+
             return {
                 speech: data.title,
                 displayText: data.title,

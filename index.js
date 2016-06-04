@@ -17,9 +17,9 @@ app.post('/', function(req, res){
 
         if(action && actions[action]){
             actions[action]()
-            .then(function(response){
-                console.log(response);
-                res.status(200).json(response);
+            .then(function(data){
+                console.log(data);
+                res.status(200).json(data);
             });
         }
         else{
