@@ -6,7 +6,7 @@ app.get('/', function (req, res) {
     res.send('Pepe boot its working');
 });
 
-app.post('/hook', function(req, res){
+app.post('/webhook', function(req, res){
     console.log(req.body);
     try {
         res.status(200).json({
