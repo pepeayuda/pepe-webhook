@@ -21,7 +21,10 @@ module.exports = {
             };
         });
     },
-    'service.init': function(data){
+    'service.find': function(data){
+
+    },
+    'service.create': function(data){
         
     }
 };
