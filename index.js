@@ -15,10 +15,11 @@ app.post('/', function(req, res){
     console.log(req.body);
     try {
         var action = req.body.result.action;
-        
+
         if(action && actions[action]){
             actions[action]()
             .then(function(response){
+                console.log(response);
                 res.status(200).json(response);
             });
         }
