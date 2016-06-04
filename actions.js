@@ -7,6 +7,9 @@ module.exports = {
         return rp(`${url}/pepe_news`)
         .then(function(response){
 
+            console.log(typeof response);
+            response = JSON.parse(response);
+
             var data = response[Math.floor(Math.random()*response.length)];
 
             console.log('/////');
