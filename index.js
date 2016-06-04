@@ -9,13 +9,13 @@ app.get('/', function (req, res) {
     res.send('Pepe boot its working');
 });
 
-app.post('/webhook', function(req, res){
+app.post('/', function(req, res){
     console.log(req.body);
 
     try {
         res.status(200).json({
-            speech: req.body.fulfillment + 'desde el hook',
-            displayText: req.body.fulfillment.speech + 'desde el hook',
+            speech: 'desde el hook',
+            displayText: 'desde el hook',
             source: 'pepehook'
         });
     } catch (e) {
