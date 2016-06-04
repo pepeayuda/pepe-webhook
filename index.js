@@ -15,7 +15,9 @@ app.post('/', function(req, res){
     try {
         var action = req.body.resoult.action;
 
-        console.log('action');
+        console.log(req.body);
+
+        console.log(action);
 
         if(action && actions[action]){
             actions[action]()
