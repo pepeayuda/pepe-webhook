@@ -1,5 +1,20 @@
 var rp = require('request-promise');
 var url = 'https://pepe-ayuda.herokuapp.com/api';
+var _   =  require('underscore');
+
+var serviceTypes = {
+   "id": 1,
+   "name": "comida"
+ },{
+   "id": 2,
+   "name": "limpieza"
+ },{
+   "id": 3,
+   "name": "mantenimiento"
+ },{
+   "id": 4,
+   "name": "compras y entregas"
+ };
 
 module.exports = {
     'news.get': function(){
@@ -23,11 +38,12 @@ module.exports = {
     },
     'service.find': function(data){
 
+        var categoryId;
+
       return rp(`${url}/services?filter[include]=servicesType`)
       .then(function (response) {
 
         response = JSON.parse(response);
-
 
       });
     },
