@@ -7,11 +7,11 @@ module.exports = {
         return rp(`${url}/pepe_news`)
         .then(function(response){
 
-            console.log(response);
+            var data = response[Math.floor(Math.random()*response.length)];
 
             return {
-                speech: response.title,
-                displayText: response.title,
+                speech: data.title,
+                displayText: data.title,
                 source: 'api.news'
             };
         })
