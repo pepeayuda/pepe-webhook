@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 var port = process.env.PORT || 3000;
+var bodyParser = require('body-parser');
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
@@ -9,7 +11,7 @@ app.get('/', function (req, res) {
 
 app.post('/webhook', function(req, res){
     console.log(req.body);
-    
+
     try {
         res.status(200).json({
             speech: req.body.fulfillment + 'desde el hook',
