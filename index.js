@@ -7,6 +7,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function(req, res){
+    console.log(req.body);
     try {
         res.status(200).json({
             speech: req.body.fulfillment + 'desde el hook',
@@ -19,5 +20,5 @@ app.post('/', function(req, res){
 });
 
 app.listen(port, function () {
-    console.log(`Example app listening on port ${port}!`);
+    console.log(`Pepe listening on port ${port}!`);
 });
