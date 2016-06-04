@@ -11,12 +11,12 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function(req, res){
-    console.log(req.body);
+    console.log(req.body.result);
 
     try {
         res.status(200).json({
-            speech: req.body.fulfillment + 'desde el hook',
-            displayText: req.body.fulfillment.speech + 'desde el hook',
+            speech: req.body.result.fulfillment + 'desde el hook',
+            displayText: req.body.result.fulfillment.speech + 'desde el hook',
             source: 'pepehook'
         });
     } catch (e) {
