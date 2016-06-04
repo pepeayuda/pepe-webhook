@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var port = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
+var actions = require('./actions');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -11,7 +12,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function(req, res){
-    console.log(req.body.result);
+    console.log(req.body.action);
 
     try {
         res.status(200).json({
