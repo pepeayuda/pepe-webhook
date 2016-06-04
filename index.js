@@ -14,7 +14,7 @@ app.post('/', function(req, res){
             source: 'pepehook'
         });
     } catch (e) {
-
+        console.log(e);
     }
 });
 
