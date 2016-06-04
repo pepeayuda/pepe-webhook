@@ -9,6 +9,12 @@ module.exports = {
 
             var data = response[Math.floor(Math.random()*response.length)];
 
+            console.log({
+                speech: data.title,
+                displayText: data.title,
+                source: 'api.news'
+            });
+
             return {
                 speech: data.title,
                 displayText: data.title,
