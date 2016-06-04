@@ -7,7 +7,8 @@ app.get('/', function (req, res) {
 });
 
 app.post('/webhook', function(req, res){
-    console.log(req.body);
+    console.log(req['body'];
+    console.log(req['params'];
     try {
         res.status(200).json({
             speech: req.body.fulfillment + 'desde el hook',
